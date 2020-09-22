@@ -23,10 +23,12 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
+// define routes.
+app.use(require("./routes/api.js"));
 
-const db = mongojs(databaseUrl, collections);
-db.on("error", error => {
-  console.log("Database Error:", error);
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
 });
 
 
