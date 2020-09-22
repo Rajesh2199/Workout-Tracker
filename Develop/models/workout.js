@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+// Add documents in our collection.
 const workoutSchema = new Schema(
   {
     date: {
@@ -40,7 +41,7 @@ const workoutSchema = new Schema(
     ]
   
 });
-
+// Coverting workoutSchema into a Model so we can work with it.
 const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;

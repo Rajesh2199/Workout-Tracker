@@ -1,11 +1,11 @@
-
-
 const express = require("express");
-const mongojs = require("mongojs");
+const mongoose = require("mongoose");
 
 const logger = require("morgan");
 
 const app = express();
+
+const PORT = 8080;
 
 app.use(logger("dev"));
 
@@ -16,6 +16,13 @@ app.use(express.static("public"));
 
 const databaseUrl = "workout";
 const collections = ["list"];
+
+
+mongoose.connect("mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
 
 const db = mongojs(databaseUrl, collections);
 db.on("error", error => {
