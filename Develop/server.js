@@ -5,7 +5,7 @@ const logger = require("morgan");
 
 const app = express();
 
-const PORT = 8080;
+const PORT = 3000;
 
 app.use(logger("dev"));
 
@@ -14,8 +14,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "workout";
-const collections = ["list"];
+//const databaseUrl = "workout";
+//const collections = ["list"];
 
 
 mongoose.connect("mongodb://localhost/workout", {
@@ -41,9 +41,4 @@ app.listen(PORT, () => {
 
 
 
-// Listen on port 3000
-app.listen(3000, () => {
-    console.log("App running on port 3000!");
-  });
-  
   
