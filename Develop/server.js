@@ -18,10 +18,15 @@ app.use(express.static("public"));
 //const collections = ["list"];
 
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout", 
+  {
   useNewUrlParser: true,
-  useFindAndModify: false
-});
+  useFindAndModify: false,
+  useUnifiedTopology:true,
+  useCreateIndex:false
+}
+);
 
 // define routes.
 app.use(require("./routes/api.js"));
