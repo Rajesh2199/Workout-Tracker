@@ -5,8 +5,9 @@ const Schema = mongoose.Schema;
 // Add documents in our collection.
 const workoutSchema = new Schema(
   {
-    date: {
-      type:Date,
+    day: {
+      type: Date,
+      default: new Date
 
     },
     exercises: [
