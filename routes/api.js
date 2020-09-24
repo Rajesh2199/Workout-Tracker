@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
+// Lets user post workout.
 router.post("/api/workouts", (req, res)=>{
     Workout.create({})
         .then(dbWorkout =>{
@@ -11,6 +12,7 @@ router.post("/api/workouts", (req, res)=>{
         });
 });
 
+//Lets user post workout to the one already posted.
 router.put("/api/workouts/:id", (req, res)=>{
     Workout.findByIdAndUpdate(req.params.id,
         {$push:{exercises:req.body}},
@@ -24,6 +26,7 @@ router.put("/api/workouts/:id", (req, res)=>{
 })
 
 
+// Lets user view the workouts.
 router.get("/api/workouts", (req, res)=>{
     Workout.find({})
         .then(dbWorkout =>{
@@ -35,6 +38,7 @@ router.get("/api/workouts", (req, res)=>{
 });
 
 
+// lets the user view the workout with limited numbers.
 router.get("/api/workouts/range", (req, res)=>{
     Workout.find({}).limit(20)
         .then(dbWorkout =>{
@@ -53,4 +57,3 @@ router.get("/api/workouts/range", (req, res)=>{
 
 
 module.exports = router;
-// router
