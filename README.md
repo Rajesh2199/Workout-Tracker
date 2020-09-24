@@ -1,4 +1,4 @@
-#  Nosql Project: Workout Tracker
+#  Nosql Project/MONGODB: Workout Tracker
 
 
 ## Overview
