@@ -10,8 +10,8 @@
 ## Deployed Version
 https://fierce-badlands-34785.herokuapp.com/
 
-
-
+## Screenshot
+![Screenshot](SS.png)
 
 
 
