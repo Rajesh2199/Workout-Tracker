@@ -39,7 +39,11 @@ const workoutSchema = new Schema(
           type:Number
         }
       }
-    ]
+    ],
+    totalDuration: {
+      type:Number,
+      default:0
+    }
   
 });
 // Coverting workoutSchema into a Model so we can work with it.
